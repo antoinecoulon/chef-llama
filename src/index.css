@@ -1,68 +1,49 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+  --color-bg-primary: rgb(250, 179, 93);
+  --color-bg-secondary: rgb(237, 231, 229);
+  --color-text-primary: rgb(81, 69, 51);
+  --color-text-secondary: rgb(167, 104, 70);
+  --color-danger: rgb(238, 69, 72);
+  /*
+    Others colors from theme: 
+    peru: rgb(206, 138, 56)
+    saddlebrown: rgb(160, 98, 32)
+    darkgray: rgb(161, 157, 132)
+    darksalmon 1 er 2: rgb(230, 165, 150) rgb(220, 141, 103)
+    pale yellow: rgb(252, 212, 129)
+    medium violet: rgb(177, 66, 134)
+    darkturquoise: rgb(13, 193, 211)
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    https://colorize.design/?url=https://api.colorize.design/getColors?url=https://plunderandpoach.webflow.io/%26html=true%26css=true%26js=false%26screenshot=true%26logo=true%26screenshotColors=12%26logoColors=6
+  */
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-a:hover {
-  color: #535bf2;
+
+html,
+body {
+  height: 100%;
 }
 
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  background: var(--color-bg-secondary);
 }
 
 button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
+  max-height: 40px;
+  padding: 4px 16px;
+  border-radius: 4px;
+  border: none;
+  font-family: "Inter", sans-serif;
   font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+  background: var(--color-bg-primary);
+  color: var(--color-text-primary);
 }

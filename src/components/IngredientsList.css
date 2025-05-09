@@ -1,0 +1,51 @@
+.ingredients-list {
+    max-width: 600px;
+    text-align: center;
+}
+
+.ingredients-list > ul {
+    list-style: none;
+}
+
+.buttons-container {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    margin: 32px 0;
+}
+
+.remove-last-ingredients {
+    background: var(--color-danger);
+    color: var(--color-text-primary);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    justify-content: center;
+}
+
+.reset-btn {
+  background: var(--color-danger);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    justify-content: center;
+    color: var(--color-text-primary);
+}
+
+.ask-recipe {
+    max-width: 600px;
+    margin: 32px 0;
+    padding: 32px;
+    border: 1px dashed var(--color-bg-primary);
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.ask-recipe p {
+    max-width: 300px;
+    font-size: 0.8rem;
+    font-style: italic;
+    text-align: justify;
+    line-height: 1.2rem;
+}
