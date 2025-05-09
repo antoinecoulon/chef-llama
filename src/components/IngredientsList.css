@@ -14,22 +14,14 @@
   margin: 32px 0;
 }
 
-.remove-last-ingredients {
-  background: var(--color-danger);
-  color: var(--color-text-primary);
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  justify-content: center;
-}
-
+.remove-last-ingredients,
 .reset-btn {
   background: var(--color-danger);
+  color: var(--color-text-primary);
   display: flex;
   align-items: center;
   gap: 4px;
   justify-content: center;
-  color: var(--color-text-primary);
 }
 
 .ask-recipe {
@@ -48,4 +40,27 @@
   font-style: italic;
   text-align: justify;
   line-height: 1.2rem;
+}
+
+.ask-recipe button {
+  padding: 8px;
+}
+
+@media (max-width: 480px) {
+  .buttons-container {
+    padding: 8px;
+    flex-wrap: wrap;
+  }
+
+  .remove-last-ingredients,
+  .reset-btn {
+    padding: 8px;
+    margin: 4px;
+  }
+
+  .ask-recipe {
+    max-width: 600px;
+    margin: 32px 8px;
+    flex-direction: column;
+  }
 }

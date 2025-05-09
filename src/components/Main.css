@@ -33,3 +33,21 @@ main > form > button {
   justify-content: center;
   gap: 4px;
 }
+
+@media (max-width: 480px) {
+  main > form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  main > form > label > input {
+    width: 240px;
+  }
+
+  main > form > label {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+}
