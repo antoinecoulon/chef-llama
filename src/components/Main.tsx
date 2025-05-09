@@ -6,11 +6,7 @@ import { CgAdd } from "react-icons/cg";
 import { getRecipeFromLlama } from "../api";
 
 export default function Main() {
-  const [ingredients, setIngredients] = useState<string[]>([
-    "poulet",
-    "champignons",
-    "carottes",
-  ]);
+  const [ingredients, setIngredients] = useState<string[]>([]);
   const [recipe, setRecipe] = useState("");
   const [loading, setLoading] = useState(false);
   const recipeSection = useRef<HTMLDivElement | null>(null);
