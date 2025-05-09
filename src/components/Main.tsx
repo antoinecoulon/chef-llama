@@ -1,17 +1,32 @@
 import IngredientsList from "./IngredientsList";
 import Recipe from "./Recipe";
 import './Main.css';
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { CgAdd } from "react-icons/cg";
+import { getRecipeFromLlama } from "../api";
 
 export default function Main() {
     const [ingredients, setIngredients] = useState<string[]>(["poulet", "champignons", "carottes"]);
+    const [recipe, setRecipe] = useState("");
+    const [loading, setLoading] = useState(false);
+    const recipeSection = useRef<HTMLDivElement | null>(null)
 
     function addIngredient(formData: FormData) {
         const newIngredient = formData.get("ingredient")
         if (typeof newIngredient === "string") {
             setIngredients([...ingredients, newIngredient]);
         }
+    }
+
+    async function generateRecipe() {
+        setLoading(true);
+        try {
+            const generatedRecipe = await getRecipeFromLlama(ingredients);
+            setRecipe(generatedRecipe);
+        } catch (error) {
+            setRecipe(`Erreur: ${error}`);
+        }
+        setLoading(false);
     }
 
     function resetIngredientsList() {
@@ -23,6 +38,12 @@ export default function Main() {
     function removeLastIngredient(): void {
         setIngredients(prevState => prevState.slice(0, -1))
     }
+
+    useEffect(() => {
+        if (recipe !== "" && recipeSection.current !== null) {
+            recipeSection.current.scrollIntoView({behavior: "smooth"});
+        }
+    }, [recipe])
 
     return (
         <main>
@@ -45,9 +66,12 @@ export default function Main() {
                 ingredientsList={ingredients}
                 resetIngredientsList={resetIngredientsList}
                 removeLastIngredient={removeLastIngredient}
+                getRecipe={generateRecipe}
+                loading={loading}
+                ref={recipeSection}
             />}
 
-            <Recipe />
+            <Recipe recipe={recipe} loading={loading} />
         </main>
     );
 }
