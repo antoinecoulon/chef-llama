@@ -1,4 +1,4 @@
-import icon from "/icon.svg"
+import icon from "/icon.png"
 import './Header.css'
 
 export default function Header() {
