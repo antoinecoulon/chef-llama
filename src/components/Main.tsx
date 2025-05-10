@@ -13,7 +13,7 @@ export default function Main() {
 
   function addIngredient(formData: FormData) {
     const newIngredient = formData.get("ingredient");
-    if (typeof newIngredient === "string") {
+    if (typeof newIngredient === "string" && newIngredient !== "") {
       setIngredients([...ingredients, newIngredient]);
     }
   }
